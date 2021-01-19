@@ -1,7 +1,4 @@
 <?php 
-  
-  $url = $_SERVER['REQUEST_URI'];
-  header("Refresh: 60; URL = $url");
 
   function lastUpdate() {
     date_default_timezone_set('Asia/Jakarta');
