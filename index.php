@@ -164,7 +164,7 @@
 
                 <?php endforeach; ?>
 
-                <h5 class="card-title fs-3 mb-3">Data Gempabumi M 5.0+ Di Indonesia</h5>
+                <h5 class="card-title fs-3 mb-3">Data Gempabumi Di Indonesia</h5>
                 <div class="row">
                   <div class="col-md-12">
                     <table class="table table-striped data">
@@ -172,17 +172,15 @@
                         <tr>
                           <th>No.</th>
                           <th>Tanggal</th>
-                          <th>Jam</th>
-                          <th>Lintang</th>
-                          <th>Bujur</th>
+                          <th>Posisi</th>
                           <th>Magnitude</th>
                           <th>Kedalaman</th>
-                          <th>Wilayah</th>
+                          <th>Keterangan</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
-                          $gempa = "https://data.bmkg.go.id/gempaterkini.xml";
+                          $gempa = "https://data.bmkg.go.id/gempadirasakan.xml";
                           $temp = file_get_contents($gempa);
                           $xml = simplexml_load_string($temp);
                           $index = 1;
@@ -193,12 +191,10 @@
                         <tr>
                           <td><?= $index++ ?></td>
                           <td><?= $data->Tanggal ?></td>
-                          <td><?= $data->Jam ?></td>
-                          <td><?= $data->Lintang ?></td>
-                          <td><?= $data->Bujur ?></td>
+                          <td><?= $data->Posisi ?></td>
                           <td><?= $data->Magnitude ?></td>
                           <td><?= $data->Kedalaman ?></td>
-                          <td><?= $data->Wilayah ?></td>
+                          <td><?= $data->Keterangan ?></td>
                         </tr>
 
                         <?php endforeach; ?>
